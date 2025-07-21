@@ -82,3 +82,6 @@ This project builds skills for:
 - C# programming for real-time systems, physics integration, and user input handling
 - Data logging and CSV output for data pipeline preprocessing
 - Demonstrates clean code, version control, and real-time simulation
+
+## License
+MIT License – Feel free to use, modify, and distribute.
