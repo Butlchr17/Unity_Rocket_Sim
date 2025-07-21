@@ -5,7 +5,7 @@ using System.IO;
 
 public class DataLogger : MonoBehaviour
 {
-
+    private string filepath = Path.Combine(Application.persistentDataPath, "trajectory.csv");
     private List<string> data = new List<string>();
     private float timer = 0f;
     private float logInterval = 0.1f;
@@ -25,8 +25,8 @@ public class DataLogger : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        File.WriteAllLines("trajectory.csv", data);
         data.Insert(0, "Time, PosX, PosY, Posz, VelX, VelY, VelZ"); // Header
+        File.WriteAllLines(filepath, data);
     }
 
 }
