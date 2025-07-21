@@ -8,10 +8,12 @@ public class RocketController : MonoBehaviour
 {
     public ParticleSystem burn;
     public Slider thrustSlider;
+    public Text statusText;
     public float thrustForce = 9.8f;
     public float pitch = 0f;
     public float rotationSpeed = 0.25f;
     private Rigidbody rb;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,15 +49,19 @@ public class RocketController : MonoBehaviour
             pitch = -rotationSpeed * Time.deltaTime;  // Tilt backward
         }
 
-         // Yaw with A/D or arrows
+        // Yaw with A/D or arrows
         float yaw = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
 
         // Apply rotation
         transform.Rotate(pitch, yaw, 0f);
+
+        statusText.text = $"PosX: {transform.position.x:F2} m, PosY: {transform.position.y:F2} m, PosZ: {transform.position.z:F2}m\n"
+                          + $"VelX: { rb.velocity.x:F2} m/s, VelY: { rb.velocity.y:F2} m/s, VelZ: { rb.velocity.z:F2} m/s";
     }
 
     void FixedUpdate()
     {
         // Simulated Gravity
     }
+
 }
