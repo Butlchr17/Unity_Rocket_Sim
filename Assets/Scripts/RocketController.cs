@@ -9,7 +9,8 @@ public class RocketController : MonoBehaviour
     public ParticleSystem burn;
     public Slider thrustSlider;
     public float thrustForce = 9.8f;
-    public float rotationSpeed = 100f;
+    public float pitch = 0f;
+    public float rotationSpeed = 0.25f;
     private Rigidbody rb;
 
     // Start is called before the first frame update
@@ -34,8 +35,23 @@ public class RocketController : MonoBehaviour
                 burn.Stop();
         }
 
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
-        transform.Rotate(0, rotation, 0);
+
+        pitch = 0f;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            pitch = rotationSpeed * Time.deltaTime; // Tilt forward
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            pitch = -rotationSpeed * Time.deltaTime;  // Tilt backward
+        }
+
+         // Yaw with A/D or arrows
+        float yaw = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
+
+        // Apply rotation
+        transform.Rotate(pitch, yaw, 0f);
     }
 
     void FixedUpdate()

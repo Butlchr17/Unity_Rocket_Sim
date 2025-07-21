@@ -9,7 +9,7 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = target.position - target.forward * 5 + Vector3.up * 2;
+        transform.position = target.position - target.forward * 15 + Vector3.up * 6;
         transform.LookAt(target);
     }
 }
