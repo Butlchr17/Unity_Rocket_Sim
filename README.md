@@ -1,7 +1,7 @@
 # Rocket Launch Simulator
 
 ## Overview
-This Unity project is a 3D rocket launch simulator designed to develop skills relevant to entry-level software engineering roles at SpaceX (e.g., New Graduate Software Engineer, Starship) and xAI (e.g., data infrastructure roles). The simulator features a rocket with user-controlled thrust and rotation, physics-based movement, real-time UI feedback, and data logging to a CSV file for post-simulation analysis. Built using C# in Unity, with version control managed via Git/GitHub, it demonstrates proficiency in real-time systems, physics integration, and data handling.
+This Unity project is a 3D rocket launch simulator designed to develop skills relevant to entry-level software engineering roles . The simulator features a rocket with user-controlled thrust and rotation, physics-based movement, real-time UI feedback, and data logging to a CSV file for post-simulation analysis. Built using C# in Unity, with version control managed via Git/GitHub, it demonstrates proficiency in real-time systems, physics integration, and data handling.
 
 ## Features
 - **Interactive Controls**: Adjust thrust via a UI Slider and Space key; rotate with W/S (pitch) and A/D (yaw).
@@ -79,10 +79,6 @@ Time,PosX,PosY,Posz,VelX,VelY,VelZ
 
 ## Purpose
 This project builds skills for:
-- **SpaceX**: C# programming for real-time systems, physics integration, and user input handling, relevant to Starship’s New Graduate Software Engineer role.
-- **xAI**: Data logging and CSV output for data pipeline preprocessing, applicable to data infrastructure roles.
-- **Portfolio**: Demonstrates clean code, version control, and real-time simulation for aerospace/AI job applications.
-
-## Demo
-- Record a 30-second gameplay video (e.g., using OBS) and add to this README.
-- Sample command to check CSV path: In `DataLogger.cs`, add `Debug.Log("CSV saved to: " + filepath);` in `OnApplicationQuit`.
+- C# programming for real-time systems, physics integration, and user input handling
+- Data logging and CSV output for data pipeline preprocessing
+- Demonstrates clean code, version control, and real-time simulation
